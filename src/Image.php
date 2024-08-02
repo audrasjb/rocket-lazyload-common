@@ -31,10 +31,14 @@ class Image {
 
 		foreach ( $images as $image ) {
 			$original_image = $image;
-			$image         = $this->canLazyload( $image );
+			$image          = $this->canLazyload( $image );
 
 			if ( ! $image ) {
 				$image_no_lazy = preg_replace( '/loading=["\']lazy["\']/i', '', $original_image );
+
+				if ( null === $image_no_lazy ) {
+					continue;
+				}
 
 				$html = str_replace( $original_image, $image_no_lazy, $html );
 
