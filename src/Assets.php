@@ -267,7 +267,7 @@ class Assets {
 			}
 		}
 
-		$button_aria_label = esc_attr__( 'play Youtube video', 'wp-rocket' );
+		$button_aria_label = esc_attr__( 'play Youtube video', 'rocket-lazyload-common' );
 
 		/**
 		 * Filters the patterns excluded from lazyload for youtube thumbnails.
