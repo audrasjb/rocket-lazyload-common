@@ -217,10 +217,11 @@ class Assets {
 	 */
 	public function getYoutubeThumbnailScript( $args = [] ) {
 		$defaults = [
-			'resolution' => 'hqdefault',
-			'lazy_image' => false,
-			'native'     => true,
-			'extension'  => 'jpg',
+			'resolution'        => 'hqdefault',
+			'lazy_image'        => false,
+			'native'            => true,
+			'extension'         => 'jpg',
+			'button_aria_label' => 'play Youtube video',
 		];
 
 		$allowed_resolutions = [
@@ -267,7 +268,7 @@ class Assets {
 			}
 		}
 
-		$button_aria_label = esc_attr__( 'play Youtube video', 'rocket-lazyload-common' );
+		$button_aria_label = $args['button_arial_label'];
 
 		/**
 		 * Filters the patterns excluded from lazyload for youtube thumbnails.
